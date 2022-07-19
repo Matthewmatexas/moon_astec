@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moon_astec&#9789;</title>
+    <link rel="shortcut icon" type="image/jpg" href="photos/favicon.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        ::-moz-selection {
+            /* Code for Firefox */
+            color: azure;
+            background: darkgray;
+        }
+
+        ::selection {
+            color: azure;
+            background: darkgray;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        body{
+            background-color: azure;
+            text-align: center;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-transform: lowercase;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        .btn{
+            width: 50px; 
+            height: 50px; 
+            border-radius: 100%; 
+            font-family: 'Poppins', sans-serif; 
+            border: none; 
+            font-size: 20px; 
+            background-color: lightgrey; 
+            margin: 20px; 
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover{
+            background-color: darkgrey;
+            transform: rotate(10deg);
+        }
+
+        h1 {
+            margin: 30px auto;
+        }
+
+        #screen {
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: azure;
+            top: 0;
+            z-index: 100;
+            transition: 0.3s;
+        }
+        @keyframes spin{
+            0%{
+                transform: rotate(-360deg);
+            }
+            100%{
+                
+            }
+        }
+    </style>
+    <div id="screen">
+        <div style="width: 120px; height: 120px; border-radius: 100%; box-shadow: 5px 0 10px darkgray; display: flex; justify-content: center; align-items: center; animation: spin 1s linear infinite;"></div>
+        <img src="photos/logo.png" alt="Moon_astec" width="100px" height="100px" style="position: absolute;">
+    </div>
+    <img src="photos/logo.png" alt="Moon_astec" style="width: 150px; margin-top: 50px;">
+    <h1>Moon_astec&#9789;</h1>
+    <button class="btn" onclick="one()" id="1">LT</button>
+    <button class="btn" onclick="two()" id="2">EN</button>
+    <p style="transition: 0.3s; display: none; opacity: 0;" id="liet">Moon_astec&#9789; persikėlė! <br> Naująjį puslapį rasite čia: <a style="color: blue; text-decoration: underline;" href="https://moonastec.github.io/-/">https://moonastec.github.io/</a></p>
+    <p style="transition: 0.3s; display: none; opacity: 0;" id="engl">Moon_astec&#9789; has moved! <br> You can find the new page here: <a style="color: blue; text-decoration: underline;" href="https://moonastec.github.io/-/">https://moonastec.github.io/</a></p>
+    <script src="https://kit.fontawesome.com/a11707644f.js" crossorigin="anonymous"></script>
+    <script>
+        setTimeout(() => {    document.getElementById("screen").style.transform = "scale(5.0)"; }, 1000);
+            setTimeout(() => {    document.getElementById("screen").style.opacity = "0"; }, 1100);
+            setTimeout(() => {    document.getElementById("screen").style.zIndex = "-1"; }, 1200);
+            function one(){
+                document.getElementById("2").style.opacity = "0";
+                document.getElementById("1").style.cursor = "default";
+                document.getElementById("1").style.pointerEvents = "none";
+                setTimeout(() => {    document.getElementById("2").style.width = "0"; }, 200);
+                setTimeout(() => {    document.getElementById("2").style.margin = "0"; }, 200);
+                setTimeout(() => {    document.getElementById("liet").style.display = "block"; }, 300);
+                setTimeout(() => {    document.getElementById("liet").style.opacity = "1"; }, 350);
+            }
+            function two(){
+                document.getElementById("1").style.opacity = "0";
+                document.getElementById("2").style.cursor = "default";
+                document.getElementById("2").style.pointerEvents = "none";
+                setTimeout(() => {    document.getElementById("1").style.width = "0"; }, 200);
+                setTimeout(() => {    document.getElementById("1").style.margin = "0"; }, 200);
+                setTimeout(() => {    document.getElementById("engl").style.display = "block"; }, 300);
+                setTimeout(() => {    document.getElementById("engl").style.opacity = "1"; }, 350);
+            }
+    </script>
+</body>
+</html>
